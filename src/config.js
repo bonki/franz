@@ -46,7 +46,7 @@ export const DEFAULT_FEATURES_CONFIG = {
     showPoweredBy: false,
   },
   isServiceProxyEnabled: false,
-  isServiceProxyIncludedInCurrentPlan: false,
+  isServiceProxyIncludedInCurrentPlan: true, //false,
   isAnnouncementsEnabled: true,
   isWorkspaceIncludedInCurrentPlan: true,
   isWorkspaceEnabled: false,

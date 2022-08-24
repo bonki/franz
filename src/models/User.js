@@ -18,13 +18,13 @@ export default class User {
   // better assume it's confirmed to avoid noise
   @observable subscription = {};
 
-  @observable isSubscriptionOwner = false;
+  @observable isSubscriptionOwner = true;
 
-  @observable hasSubscription = false;
+  @observable hasSubscription = true;
 
-  @observable hadSubscription = false;
+  @observable hadSubscription = true;
 
-  @observable isPremium = false;
+  @observable isPremium = true;
 
   @observable beta = false;
 
@@ -48,15 +48,15 @@ export default class User {
     this.lastname = data.lastname || this.lastname;
     this.organization = data.organization || this.organization;
     this.accountType = data.accountType || this.accountType;
-    this.isPremium = data.isPremium || this.isPremium;
+    this.isPremium = true; //data.isPremium || this.isPremium;
     this.beta = data.beta || this.beta;
     this.donor = data.donor || this.donor;
     this.isDonor = data.isDonor || this.isDonor;
     this.locale = data.locale || this.locale;
 
-    this.isSubscriptionOwner = data.isSubscriptionOwner || this.isSubscriptionOwner;
-    this.hasSubscription = data.hasSubscription || this.hasSubscription;
-    this.hadSubscription = data.hadSubscription || this.hadSubscription;
+    this.isSubscriptionOwner = true; //data.isSubscriptionOwner || this.isSubscriptionOwner;
+    this.hasSubscription = true; //data.hasSubscription || this.hasSubscription;
+    this.hadSubscription = true; //data.hadSubscription || this.hadSubscription;
 
     this.team = data.team || this.team;
   }

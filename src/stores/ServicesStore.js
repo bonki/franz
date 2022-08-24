@@ -743,7 +743,7 @@ export default class ServicesStore extends Store {
         isDarkModeEnabled: service.isDarkModeEnabled,
         team: service.team,
         hasCustomIcon: service.hasCustomIcon,
-        isRestricted: service.isServiceAccessRestricted,
+        isRestricted: false, //service.isServiceAccessRestricted,
         isHibernating: service.isHibernating,
       },
       recipeId: service.recipe.id,
@@ -859,7 +859,7 @@ export default class ServicesStore extends Store {
 
     this.allDisplayed.map((service, index) => {
       if (userHasReachedServiceLimit) {
-        service.isServiceAccessRestricted = index >= serviceLimit;
+        service.isServiceAccessRestricted = false; //index >= serviceLimit;
 
         if (service.isServiceAccessRestricted) {
           service.restrictionType = RESTRICTION_TYPES.SERVICE_LIMIT;
@@ -869,7 +869,7 @@ export default class ServicesStore extends Store {
       }
 
       if (service.isUsingCustomUrl) {
-        service.isServiceAccessRestricted = !features.isCustomUrlIncludedInCurrentPlan;
+        service.isServiceAccessRestricted = false; //!features.isCustomUrlIncludedInCurrentPlan;
 
         if (service.isServiceAccessRestricted) {
           service.restrictionType = RESTRICTION_TYPES.CUSTOM_URL;
